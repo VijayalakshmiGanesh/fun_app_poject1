@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #artistName,
+        #songName {
+            border: 1px solid black;
+            width: 45%;
+            height: 5vh;
+            display: block;
+            margin: 0.5rem;
+            padding: 0.5rem;
+            display: inline-block;
+            font-size: larger;
+        }
+
+        #show {
+            border: 1px solid black;
+            width: 35%;
+            height: 5vh;
+            display: block;
+            margin: 0.5rem;
+            padding: 0.5rem;
+            color: white;
+            font-size: large;
+            background-color: #b56ca2;
+            display: inline;
+            text-align: center;
+        }
+
+        #box-box {
+            text-align: center;
+            font-size: larger;
+        }
+
+        #songLyrics {
+            border: 1px solid black;
+            width: 45%;
+            height: 30vh;
+            display: block;
+            margin: 1rem;
+            padding: 1rem;
+            display: inline-block;
+            text-align: center;
+            font-size: medium;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box-box">
+        <bold>
+            <h3>Enter Artist name:</h3>
+        </bold>
+        <input id="artistName" type="text" placeholder="Ex: Coldplay" />
+        <bold>
+            <h3>Enter Song Title:</h3>
+        </bold>
+        <input id="songName" type="text" placeholder="Ex:Adventure of a Lifetime" />
+        <hr>
+        <button id="show"> Click to Show Lyrics</button>
+        <hr>
+        <textarea id="songLyrics"></textarea>
+    </div>
+    <script src="APIproj.js" type="text/javascript" />
+</body>
+
+</html>
