@@ -1,20 +1,31 @@
-var artist = document.querySelector("#artistName")
-var song = document.querySelector("#songName")
-var button = document.querySelector("#show")
+var foodName = document.querySelector("#foodName")
 var output = document.querySelector("#songLyrics")
+var food = document.querySelector("#food")
+var recipe = document.querySelector("#recipe")
 
-button.addEventListener("click", showLyrics)
-var musicURL = "https://api.lyrics.ovh/v1/"
+food.addEventListener("click", showFood)
+
+function showFood() {
+
+    fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=` + foodName.value)
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            data.meals.forEach(meal => {
+                var ins = meal.strInstructions
+                console.log(ins);
+                recipe.innerHTML = "<b>Instructions to cook: </b>" + ins;
+            })
+        })
+
+
+};
+
 
 function showLyrics() {
     var input = artist.value + "/" + song.value;
 
-    // //processing
-    // fetch(getResponseText(input))
-    // .then(response => response.json())
-    // .then(json => {
-    //     var lyrics = json.contents
-    // })
+
 
     var request = new XMLHttpRequest();
 
