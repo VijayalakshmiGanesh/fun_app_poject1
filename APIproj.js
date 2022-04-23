@@ -16,7 +16,10 @@ function showFood() {
                 console.log(ins);
                 recipe.innerHTML = "<b>Instructions to cook: </b>" + ins;
             })
-        })
+        }).catch(errorHandler)
+};
 
-
+function errorHandler(error) {
+    console.log("Error Occured ... " + error)
+    recipe.innerHTML = "This meal is not available, Try with proper meal name"
 };
